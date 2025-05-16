@@ -2,7 +2,82 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram import types
 
+def button_text(text):
+    kb = [
+        [
+            types.KeyboardButton(text=text)
+        ]
+    ]
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    return keyboard
 
+def incoming_like_actions():
+    kb = [
+        [
+            types.KeyboardButton(text='1'),
+            types.KeyboardButton(text='2'),
+            types.KeyboardButton(text='3'),
+        ]
+    ]
+
+def report_buttons():
+    kb = [
+        [
+            types.KeyboardButton(text="Неподобающий текст профиля/реклама/ссылки")
+        ],
+        [
+            types.KeyboardButton(text="Неподобающее фото/видео профиля")
+        ],
+        [
+            types.KeyboardButton(text="Мошенничество")
+        ],
+        [
+            types.KeyboardButton(text="🚨Отмена❌")
+        ]
+    ]
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    return keyboard
+
+def form_actions():
+    kb = [
+        [
+            types.KeyboardButton(text="💤Выйти"),
+            types.KeyboardButton(text="📢Репорт🚨"),
+            types.KeyboardButton(text="👎"),
+            types.KeyboardButton(text="💝")
+        ]
+    ]
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        one_time_keyboard=False
+    )
+    return keyboard
+
+def preferences_keyboard():
+    kb = [
+        [
+            types.KeyboardButton(text="🔵Парней"),
+            types.KeyboardButton(text="🔴Девушек")
+        ],
+        [
+            types.KeyboardButton(text="Всех")
+        ]
+    ]
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    return keyboard
 def menu():
     kb = [
         [types.KeyboardButton(text='1'),
@@ -115,6 +190,7 @@ def change_profile_menu():
             types.KeyboardButton(text='2'),
             types.KeyboardButton(text='3'),
             types.KeyboardButton(text='4'),
+            types.KeyboardButton(text='5'),
         ],
         [
             types.KeyboardButton(text='🚨Отмена❌'),
